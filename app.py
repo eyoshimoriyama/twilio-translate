@@ -5,7 +5,7 @@ from twilio.twiml.voice_response import Play, VoiceResponse
 from twilio.rest import Client
 from config import twilio_account_sid, twilio_auth_token, ms_api_key
 from urllib.parse import quote
-
+import os
  
 # Account SID and Auth Token from www.twilio.com/console
 client = Client(twilio_account_sid, twilio_auth_token)
