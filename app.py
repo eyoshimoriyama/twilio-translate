@@ -44,8 +44,8 @@ def outbound_call():
     translator = Translator(ms_api_key)
     translated = translator.translate(text, lang_from='en', lang_to='ja')
     translated_audio =  translator.speak(translated,  lang='ja', format='audio/wav')
-    time.sleep(5)
-    
+    time.sleep(3)
+
     # Return the played response of the translated audio.
     response = VoiceResponse()
     response.play(translated_audio)
