@@ -20,7 +20,7 @@ def inbound_sms():
                      'Wait to receive a phone call :)')
  
     # Grab the text to be translated.
-    text = urllib.quote(request.form['Body'])
+    text = quote(request.form['Body'])
  
     # Grab the relevant phone numbers.
     from_number = request.form['From']
