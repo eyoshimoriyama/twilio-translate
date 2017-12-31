@@ -27,7 +27,7 @@ def inbound_sms():
  
     # Create a phone call that uses our other route to translate the text.
     client.api.account.calls.create(to=from_number, from_=to_number,
-                        url='http://fb9b84bb.ngrok.io/call?text={}'
+                        url='https://twilio-translate-yoshi.herokuapp.com/call?text={}'
                         .format(text))
  
     return str(response)
@@ -36,11 +36,14 @@ def inbound_sms():
 # A route to handle the logic for phone calls.
 @app.route('/call', methods=['POST'])
 def outbound_call():
+    
+    # Grab the text from the message and translate into Japanese.
     text = request.args.get('text')
     translator = Translator(ms_api_key)
     translated = translator.translate(text, lang_from='en', lang_to='ja')
     translated_audio =  translator.speak(translated,  lang='ja', format='audio/wav')
- 
+    
+    # Return the played response of the translated audio.
     response = VoiceResponse()
     response.play(translated_audio)
     return str(response)
