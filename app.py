@@ -4,6 +4,7 @@ from twilio.twiml.messaging_response import MessagingResponse, Message
 from twilio.twiml.voice_response import Play, VoiceResponse
 from twilio.rest import Client
 from config import twilio_account_sid, twilio_auth_token, ms_api_key
+import os
 import urllib
  
 # Account SID and Auth Token from www.twilio.com/console
