@@ -1,4 +1,4 @@
-# twilio-translate
+# Twilio Translate
 
 This repository contains a Flask app that hooks up a Twilio phone number to receieve text messages in English and return a phone call with a audio translation in Japanese. 
 
